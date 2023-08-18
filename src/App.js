@@ -12,6 +12,9 @@ function App() {
           <div>Автор: </div>
           <date>Дата:</date>
         </div>
+        <div className="post__btn">
+          <button type="button">Редактировать</button>
+        </div>
       </div>
     </div>
   )
