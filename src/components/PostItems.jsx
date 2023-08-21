@@ -5,11 +5,11 @@ function PostItem(props){
   return(
   <div className="post">
     <div className="post__content">
-      <h2>{props.post.id}. {props.post.title}</h2>
+      <h2>{props.post.id}. {props.post.tittle}</h2>
       <p>{props.post.body}</p>
-      <div>{props.post.subject}</div>
-      <div>{props.post.author}</div>
-      <date>{props.post.date}</date>
+      <div>Тема:{props.post.subject}</div>
+      <div>Автор: {props.post.author}</div>
+      <date>Дата публикации:{props.post.date}</date>
       <Comments></Comments>
     </div>
     <div className="post__btn">
