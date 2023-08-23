@@ -12,7 +12,8 @@ function App() {
     {id:2, tittle:"Заголовок2", body:"Description2", subject:"s2", author:"a2", date:"d2" },
   ]);
   
-  //const date= Date.now().getFullYear()+"-"+Date.now().getMonth()+"-"+Date.now().getDate();
+ let MyDate= new Date();
+ let curentDate = MyDate.getFullYear() + "-" + (MyDate.getMonth()+1) +"-" + MyDate.getDate();
 
   const [tittle, setTittle] = useState("safawf");
   const [body, setBody] = useState("");
@@ -63,7 +64,7 @@ function App() {
         placeholder="Автор"/>
         <MyInput
         value={date}
-        onChange={e => setDate(e.target.value)} 
+        onChange={e => setDate((e.target.value)=curentDate)} 
         type="text" 
         name="date" 
         placeholder="Дата публикации"/>
