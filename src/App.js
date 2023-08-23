@@ -15,23 +15,13 @@ function App() {
  let MyDate= new Date();
  let curentDate = MyDate.getFullYear() + "-" + (MyDate.getMonth()+1) +"-" + MyDate.getDate();
 
-  const [tittle, setTittle] = useState("safawf");
-  const [body, setBody] = useState("");
-  const [subject, setSubject] = useState("");
-  const [author, setAuthor] = useState("");
-  const [date, setDate] = useState("");
+  const [article, setArticle] = useState({tittle: "", body: "", subject: "", author: "", date: ""});
 
   function addNewArticle(e){
     e.preventDefault();
-    const newArticle = {
-      id: Date.now(),
-      tittle,
-      body,
-      subject,
-      author,
-      date,
-    }
-    console.log(newArticle);
+
+    setPosts([...posts, {...article, id: Date.now()}]);
+    setArticle({tittle: "", body: "", subject: "", author: "", date: ""});
     }
   
 
@@ -39,32 +29,32 @@ function App() {
     <div className="App">
       <form className="form">
         <MyInput 
-        value={tittle} 
-        onChange={e => setTittle(e.target.value)} 
+        value={article.tittle} 
+        onChange={e => setArticle({...article, tittle: e.target.value})}  
         type="text" 
         name="tittle" 
         placeholder="Название статьи"/>
         <MyInput 
-        value={body}
-        onChange={e => setBody(e.target.value)}
+        value={article.body}
+        onChange={e => setArticle({...article, body: e.target.value})}
         type="text" 
         name="body" 
-        placeholder="Описание статьи"/>
+        placeholder="Текст статьи"/>
         <MyInput 
-        value={subject}
-        onChange={e => setSubject(e.target.value)}
+        value={article.subject}
+        onChange={e => setArticle({...article, subject: e.target.value})}
         type="text" 
         name="subject" 
         placeholder="Тема статьи"/>
         <MyInput
-        value={author}
-        onChange={e => setAuthor(e.target.value)} 
+        value={article.author}
+        onChange={e => setArticle({...article, author: e.target.value})} 
         type="text" 
         name="author" 
         placeholder="Автор"/>
         <MyInput
-        value={date}
-        onChange={e => setDate((e.target.value)=curentDate)} 
+        value={article.date}
+        onChange={e => setArticle({...article, date: (e.target.value)=curentDate })} 
         type="text" 
         name="date" 
         placeholder="Дата публикации"/>

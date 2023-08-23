@@ -5,7 +5,7 @@ function PostItem(props){
   return(
   <div className="post">
     <div className="post__content">
-      <h2>{props.post.id}. {props.post.tittle}</h2>
+      <h2>{props.number}. {props.post.tittle}</h2>
       <p>{props.post.body}</p>
       <div>Тема:{props.post.subject}</div>
       <div>Автор: {props.post.author}</div>
