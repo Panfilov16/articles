@@ -1,5 +1,7 @@
 import React from 'react';
 import Comments  from './Comments';
+//import MyButton from './ui/button/MyButton';
+import "../style/post-content.css";
 
 function PostItem(props){
   return(
@@ -14,7 +16,7 @@ function PostItem(props){
     </div>
     <div className="post__btn">
       <button className='btn__edit' type="button">Редактировать</button>
-      <button className='btn__delete' type="button">Удалить</button>
+      <button onClick={()=> props.remove(props.post)}>Удалить</button>
     </div>
   </div>
   )
