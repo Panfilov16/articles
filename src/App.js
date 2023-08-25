@@ -10,7 +10,8 @@ function App() {
     {id:1, tittle:"Заголовок1", body:"Description1", subject:"s1", author:"a1", date:"d1" },
     {id:2, tittle:"Заголовок2", body:"Description2", subject:"s2", author:"a2", date:"d2" },
   ]);
-
+  
+  const [search, setSearch] = useState("");
   const createArticle = (newArticle) => {
      setPosts([...posts, newArticle]);
   }
@@ -21,11 +22,10 @@ function App() {
   return (
     <div className="App">
       <ArticleForm create={createArticle} />
-      <div>
-        <select>
-          <option>Выберите категорию</option>
-        </select>
-      </div>
+      <MyInput
+      value={search}
+      onChange={(e) => setSearch(e.target.value)} 
+      placeholder="Поиск..." />
       {posts.length !==0 ?       
       <PostList remove={removeArticle} posts={posts} tittle="Список постов 1"/>
       :
