@@ -8,8 +8,10 @@ import MyInput from "./components/ui/input/MyInput";
 
 function App() {
   const [posts, setPosts] = useState([
-    {id:1, tittle:"Заголовок1", body:"Description1", subject:"s1", author:"a1", date:"d1" },
-    {id:2, tittle:"Заголовок2", body:"Description2", subject:"s2", author:"a2", date:"d2" },
+    {id:1, tittle:"Заголовок1", body:"Description1", subject:"Машины", author:"Артур", date:"2023-8-25" },
+    {id:2, tittle:"Заголовок2", body:"Description2", subject:"Самолёты", author:"Сергей", date:"2023-8-24" },
+    {id:3, tittle:"Заголовок3", body:"Description3", subject:"Поезда", author:"Виктор", date:"2023-8-24" },
+
   ]);
   
   const [search, setSearch] = useState("");
