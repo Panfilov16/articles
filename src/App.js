@@ -3,6 +3,7 @@ import "./style/App.css";
 import PostList from "./components/PostList.jsx";
 import "./components/ui/input/MyInput.css";
 import ArticleForm from "./components/ArticleForm";
+import MyInput from "./components/ui/input/MyInput";
 
 
 function App() {
