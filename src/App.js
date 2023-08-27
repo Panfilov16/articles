@@ -15,6 +15,7 @@ function App() {
   ]);
   
   const [search, setSearch] = useState("");
+
   const createArticle = (newArticle) => {
      setPosts([...posts, newArticle]);
   }
@@ -25,6 +26,9 @@ function App() {
   return (
     <div className="App">
       <ArticleForm create={createArticle} />
+      <hr style={{margin: '15px 0'}}/>
+      <div>
+      </div>
       <MyInput
       value={search}
       onChange={(e) => setSearch(e.target.value)} 
