@@ -13,9 +13,10 @@ function App() {
     {id:3, tittle:"Заголовок3", body:"Description3", subject:"Поезда", author:"Виктор", date:"2023-8-24" },
 
   ]);
-  
-  const [search, setSearch] = useState("");
 
+const [filterSort, setFilterSort] = useState('');
+
+  
   const createArticle = (newArticle) => {
      setPosts([...posts, newArticle]);
   }
@@ -23,16 +24,14 @@ function App() {
   const removeArticle = (post) => {
     setPosts(posts.filter(p => p.id!== post.id));
   }
+
   return (
     <div className="App">
       <ArticleForm create={createArticle} />
       <hr style={{margin: '15px 0'}}/>
-      <div>
-      </div>
       <MyInput
-      value={search}
-      onChange={(e) => setSearch(e.target.value)} 
       placeholder="Поиск..." />
+      
       {posts.length !==0 ?       
       <PostList remove={removeArticle} posts={posts} tittle="Список постов 1"/>
       :
